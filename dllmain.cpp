@@ -35,6 +35,8 @@
 #include <unordered_set>
 #include <mutex>
 
+#include "forwarders.h"   // MSVC /EXPORT forwarders to steam_api64_org.dll
+
 // ---- ISteamGameServer::BeginAuthSession vtable byte offset -----------
 // Verified by disassembling SteamAPI_ISteamGameServer_BeginAuthSession in
 // the shipped steam_api64.dll:  mov rax,[rcx]; jmp [rax+0xD0]
@@ -218,7 +220,7 @@ static void InitOnce()
 // ---------------------------------------------------------------------
 //  Exported, hooked factory (named in steam_api64.def)
 // ---------------------------------------------------------------------
-extern "C" __declspec(dllexport)
+extern "C"
 void* My_FindOrCreateGameServerInterface(int32_t hSteamUser, const char* pszVersion)
 {
     std::call_once(g_initOnce, InitOnce);
