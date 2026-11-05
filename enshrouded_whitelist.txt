@@ -1,0 +1,10 @@
+# Enshrouded admin whitelist
+# One SteamID64 (the 17-digit number) per line. Text after it is ignored,
+# so you can add names as comments. Lines starting with # or ; are ignored.
+# Find a SteamID64 at https://steamid.io  or  https://steamdb.info/calculator/
+#
+# The file is re-read automatically whenever you save it - no server restart.
+#
+76561198000000001   # you
+76561198000000002   # friend 1
+76561198000000003   # friend 2

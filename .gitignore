@@ -1,0 +1,5 @@
+*.obj
+*.lib
+*.exp
+*.log
+steam_api64.dll
