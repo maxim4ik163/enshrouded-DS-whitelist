@@ -26,5 +26,6 @@ for i in range(nname):
 rows.sort()
 print('LIBRARY steam_api64'); print('EXPORTS')
 for o,n in rows:
-    print('    %s=My_FindOrCreateGameServerInterface @%d'%(n,o) if n==HOOK
-          else '    %s=%s.%s @%d'%(n,REAL,n,o))
+    if n==HOOK:                       print('    %s=My_FindOrCreateGameServerInterface'%n)
+    elif n=='g_pSteamClientGameServer': print('    %s=%s.%s DATA'%(n,REAL,n))
+    else:                             print('    %s=%s.%s'%(n,REAL,n))
